@@ -25,8 +25,14 @@
 
 (print (cl-djula-tailwind:get-stylesheet #P"index.html" *template-directory*))
 
+
+(defun render-stylesheet (template)
+	(setf (getf djula:*default-template-arguments* :tailwind) (cl-djula-tailwind:get-stylesheet template *template-directory*)))
+
+
 (defroute "/" ()
-  (render #P"index.html" (list :tailwind (cl-djula-tailwind:get-stylesheet #P"index.html" *template-directory*))))
+	(render-stylesheet #P"index.html")
+  (render #P"index.html"))
 
 ;;
 ;; Error pages
