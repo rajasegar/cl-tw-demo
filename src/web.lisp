@@ -23,8 +23,6 @@
 ;;
 ;; Routing rules
 
-(print (cl-djula-tailwind:get-stylesheet #P"index.html" *template-directory*))
-
 
 (defun render-stylesheet (template)
 	(setf (getf djula:*default-template-arguments* :tailwind) (ppcre:regex-replace-all "NIL" (cl-djula-tailwind:get-stylesheet template *template-directory*) "")))
