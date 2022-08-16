@@ -27,7 +27,7 @@
 
 
 (defun render-stylesheet (template)
-	(setf (getf djula:*default-template-arguments* :tailwind) (cl-djula-tailwind:get-stylesheet template *template-directory*)))
+	(setf (getf djula:*default-template-arguments* :tailwind) (ppcre:regex-replace-all "NIL" (cl-djula-tailwind:get-stylesheet template *template-directory*) "")))
 
 
 (defroute "/" ()
