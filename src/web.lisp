@@ -30,17 +30,17 @@
 
 (defroute "/" ()
 	(render-stylesheet #P"index.html")
-	(print (getf djula:*default-template-arguments* :tailwind))
+	;; (print (getf djula:*default-template-arguments* :tailwind))
   (render #P"index.html"))
 
 (defroute "/sizing" ()
 	(render-stylesheet #P"sizing.html")
-	(print (getf djula:*default-template-arguments* :tailwind))
+	;; (print (getf djula:*default-template-arguments* :tailwind))
   (render #P"sizing.html"))
 
 (defroute "/build-anything" ()
 	(render-stylesheet #P"build-anything.html")
-	(print (getf djula:*default-template-arguments* :tailwind))
+	;; (print (getf djula:*default-template-arguments* :tailwind))
   (render #P"build-anything.html"))
 ;;
 ;; Error pages
