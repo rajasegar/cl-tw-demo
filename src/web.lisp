@@ -42,6 +42,15 @@
 	(render-stylesheet #P"build-anything.html")
 	;; (print (getf djula:*default-template-arguments* :tailwind))
   (render #P"build-anything.html"))
+
+(defroute "/playground" ()
+	(render-stylesheet #P"playground.html")
+	;; (print (getf djula:*default-template-arguments* :tailwind))
+  (render #P"playground.html"))
+
+(defroute "/darkmode" ()
+	(render-stylesheet #P"darkmode.html")
+  (render #P"darkmode.html"))
 ;;
 ;; Error pages
 
