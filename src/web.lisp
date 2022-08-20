@@ -25,7 +25,7 @@
 
 
 (defun render-stylesheet (template)
-	(setf (getf djula:*default-template-arguments* :tailwind) (ppcre:regex-replace-all "NIL" (cl-djula-tailwind:get-stylesheet template *template-directory*) "")))
+	(setf (getf djula:*default-template-arguments* :tailwind) (cl-djula-tailwind:get-stylesheet template *template-directory*) ))
 
 
 (defroute "/" ()
@@ -47,6 +47,7 @@
 (defroute "/darkmode" ()
 	(render-stylesheet #P"darkmode.html")
   (render #P"darkmode.html"))
+
 ;;
 ;; Error pages
 
